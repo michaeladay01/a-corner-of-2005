@@ -444,6 +444,9 @@ function openWindow(state: State, action: Extract<Action, { type: 'open-window' 
   return { ...state, windows: [...state.windows, win], focused: win.id, zTop: z, startMenuOpen: false }
 }
 
+/** Whether anything is open when the desktop appears. */
+const OPEN_ON_ARRIVAL = false
+
 /**
  * Where the two windows sit when you arrive. The browser goes top-left with
  * its Favorites showing, and the note is placed clear of that menu rather
@@ -522,16 +525,17 @@ function scheduleReplies(state: State, contactId: string, lines: string[], from 
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
-    case 'boot-finished':
-      // The browser is already up with its Favorites showing, so the sites
-      // are one click away, and readme.txt sits on top of it as the note
-      // left on the desktop.
+    case 'boot-finished': {
+      // Off for now: you arrive at a bare desktop. Set this true to have the
+      // browser up with its Favorites showing and readme.txt on top of it.
+      if (!OPEN_ON_ARRIVAL) return { ...state, phase: 'desktop' }
       return arriveLayout(
         openWindow(
           openWindow({ ...state, phase: 'desktop' }, { type: 'open-window', kind: 'ie' }),
           { type: 'open-window', kind: 'notepad' }
         )
       )
+    }
 
     case 'sign-in': {
       const me = { ...state.me, name: action.name, email: action.email, presence: action.presence }
