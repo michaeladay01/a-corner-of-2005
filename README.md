@@ -15,7 +15,7 @@ The internet was a different place back then. Consider this your invitation to g
 ## Making the contacts talk back
 
 Out of the box your contacts reply from a script — the same lines every time.
-You can instead have them answered for real, in character, by Claude.
+You can instead have them answered for real, in character, by a language model.
 
 Copy `.env.example` to `.env`, put an API key in it, and restart the dev
 server:
