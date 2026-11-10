@@ -199,7 +199,7 @@ function windowSize(kind: WindowKind): { w: number; h: number; resizable: boolea
     case 'display':
       return { w: 428, h: 486, resizable: false }
     case 'notepad':
-      return { w: 672, h: 620, resizable: true }
+      return { w: 648, h: 404, resizable: true }
     case 'limewire':
       return { w: 748, h: 560, resizable: true }
     case 'ie':
@@ -472,7 +472,7 @@ function arriveLayout(state: State): State {
   // view. Its own bottom is allowed to run under the taskbar, as a window
   // dropped on a desktop would.
   const noteX = Math.max(16, ieX - 260)
-  const noteY = Math.max(ieY + 60, Math.min(ieY + 170, screenH - 220))
+  const noteY = Math.max(ieY + 60, screenH - floor - note.h - 10)
 
   return {
     ...state,
