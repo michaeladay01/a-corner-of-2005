@@ -2,8 +2,8 @@ const README = `readme.txt  —  C:\\Documents and Settings\\You\\Desktop
 
 heyyy, you're online!
 
-Welcome to 2005. Your computer is ready, MSN is waiting, and someone
-probably just sent you a nudge.
+Welcome to 2005. YouTube's open, Hotmail is waiting, and there's
+probably someone nudging you on MSN.
 
 Go check your Hotmail, see what's on eBay, download some music on
 LimeWire (fingers crossed it's actually the song you wanted), play a
@@ -11,6 +11,8 @@ few games and generally get up to no good on the internet.
 
 I've brought back a little bit of the old internet, so have a poke
 around, open some windows and make yourself at home.
+
+Just don't download anything dodgy. Or do.
 
 `
 
