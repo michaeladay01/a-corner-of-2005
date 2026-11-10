@@ -15,6 +15,10 @@ type Page = {
 }
 
 const HOME = 'http://www.google.co.uk/'
+/* Where the browser is sitting when you arrive. The Home button still
+   goes to HOME, the way a homepage you set once and a page you happen to
+   be on are different things. */
+const START = 'http://www.youtube.com/'
 const ABOUT = 'http://www.google.co.uk/about.html'
 
 /* The sites in the Favorites menu. Each renders straight into the browser's
@@ -420,12 +424,12 @@ function findPage(url: string) {
    home page: ?open=ie&site=youtube. The name is matched against the title in
    the Favorites list, so the URL reads the way the menu does. */
 function startPage(): string {
-  if (typeof window === 'undefined') return HOME
+  if (typeof window === 'undefined') return START
   const want = new URLSearchParams(window.location.search).get('site')
-  if (!want) return HOME
+  if (!want) return START
   const slug = (text: string) => text.toLowerCase().replace(/[^a-z0-9]/g, '')
   const match = FAVOURITES.find((f) => slug(f.title) === slug(want))
-  return match ? match.url : HOME
+  return match ? match.url : START
 }
 
 export function InternetExplorer({ windowId }: { windowId?: string }) {

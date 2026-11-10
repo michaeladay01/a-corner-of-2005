@@ -111,6 +111,20 @@ export function StartMenu() {
               <strong>Notepad</strong>
             </span>
           </button>
+          <button className="start-item" onClick={() => open('solitaire')}>
+            <SolitaireIcon size={24} />
+            <span>
+              <strong>Solitaire</strong>
+              <small>The cards cascade when you win</small>
+            </span>
+          </button>
+          <button className="start-item" onClick={() => open('minesweeper')}>
+            <MineIcon size={24} />
+            <span>
+              <strong>Minesweeper</strong>
+              <small>Still nobody reads the rules</small>
+            </span>
+          </button>
           <button className="start-item" onClick={() => open('history')}>
             <FolderIcon size={24} />
             <span>
