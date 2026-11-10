@@ -445,7 +445,7 @@ function openWindow(state: State, action: Extract<Action, { type: 'open-window' 
 }
 
 /** Whether anything is open when the desktop appears. */
-const OPEN_ON_ARRIVAL = false
+const OPEN_ON_ARRIVAL = true
 
 /**
  * Where the two windows sit when you arrive. The browser goes top-left with
@@ -526,8 +526,9 @@ function scheduleReplies(state: State, contactId: string, lines: string[], from 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
     case 'boot-finished': {
-      // Off for now: you arrive at a bare desktop. Set this true to have the
-      // browser up with its Favorites showing and readme.txt on top of it.
+      // The browser is already up with its Favorites showing, so the sites
+      // are one click away, and readme.txt sits on top of it as the note
+      // left on the desktop. Set the flag false to arrive at a bare desktop.
       if (!OPEN_ON_ARRIVAL) return { ...state, phase: 'desktop' }
       return arriveLayout(
         openWindow(
