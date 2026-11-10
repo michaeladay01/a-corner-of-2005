@@ -333,6 +333,21 @@ export function MailIcon({ size = 16 }: P) {
   )
 }
 
+/* The desktop's Hotmail shortcut. MailIcon is drawn on a 16px grid for the
+   taskbar and the contact list; blown up to icon size it reads as a thin
+   outline next to the others, so the desktop gets its own at 34. */
+export function HotmailIcon({ size = 34 }: P) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2.5" y="7.5" width="29" height="19" rx="1.5" fill="#fff" stroke="#5a7aa0" />
+      <path d="M2.5 9 L17 19.5 L31.5 9" fill="none" stroke="#5a7aa0" strokeWidth="1.4" />
+      <path d="M2.5 25.5 L13 17 M31.5 25.5 L21 17" fill="none" stroke="#9fb3c8" />
+      <path d="M21 4 h10 v8 h-10Z" fill="#1769b4" stroke="#0f4e89" />
+      <path d="M23 8.2 l2 2 l4 -4.2" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export function VolumeIcon({ size = 16, muted = false }: P & { muted?: boolean }) {
   return (
     <svg width={size} height={size} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

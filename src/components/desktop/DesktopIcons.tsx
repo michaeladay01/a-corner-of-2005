@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react'
 import {
+  HotmailIcon,
   LimeWireIcon,
   PaintIcon,
   IeIcon,
@@ -28,6 +29,7 @@ const SHORTCUTS: Shortcut[] = [
   { id: 'ie', label: 'Internet Explorer', icon: <IeIcon />, open: 'ie' , size: 1, type: 'Shortcut', modified: 20050101 },
   { id: 'limewire', label: 'LimeWire', icon: <LimeWireIcon />, open: 'limewire' , size: 3, type: 'Shortcut', modified: 20050802 },
   { id: 'paint', label: 'Paint', icon: <PaintIcon />, open: 'paint' , size: 340, type: 'Application', modified: 20050101 },
+  { id: 'hotmail', label: 'Hotmail', icon: <HotmailIcon />, open: 'hotmail' , size: 2, type: 'Shortcut', modified: 20050714 },
   { id: 'readme', label: 'readme.txt', icon: <NotepadIcon />, open: 'notepad' , size: 1, type: 'Text Document', modified: 20050915 },
 ]
 
