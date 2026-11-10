@@ -1,6 +1,6 @@
 # Builds the desktop and publishes it to GitHub Pages on every push to main.
-# Pages serves the site from /a-corner-of-2005/, so the build is told that
-# through XP_BASE — otherwise every asset path points at the host's root.
+# It is served from its own domain, 2005.michaela.day, so it sits at the root
+# and the build needs no XP_BASE. (XP_BASE is for the blog's copy at /xp/.)
 name: Deploy to Pages
 
 on:
@@ -29,8 +29,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          XP_BASE: /a-corner-of-2005/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
