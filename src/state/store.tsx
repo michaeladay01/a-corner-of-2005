@@ -199,7 +199,7 @@ function windowSize(kind: WindowKind): { w: number; h: number; resizable: boolea
     case 'display':
       return { w: 428, h: 486, resizable: false }
     case 'notepad':
-      return { w: 600, h: 420, resizable: true }
+      return { w: 672, h: 620, resizable: true }
     case 'limewire':
       return { w: 748, h: 560, resizable: true }
     case 'ie':
@@ -467,12 +467,12 @@ function arriveLayout(state: State): State {
   const ieX = Math.max(24, Math.min(Math.round(screenW * 0.26), screenW - ie.w - 16))
   const ieY = Math.max(12, Math.min(28, screenH - ie.h - floor))
 
-  // The note is staggered off the browser: down and to the left, so it covers
-  // its bottom corner while leaving the Favorites menu and the title bar in
+  // The note is staggered off the browser: left and down, far enough to cover
+  // its lower left while leaving the Favorites menu and the title bar in
   // view. Its own bottom is allowed to run under the taskbar, as a window
   // dropped on a desktop would.
-  const noteX = Math.max(16, ieX - 220)
-  const noteY = Math.max(ieY + 60, Math.min(ieY + 390, screenH - 160))
+  const noteX = Math.max(16, ieX - 260)
+  const noteY = Math.max(ieY + 60, Math.min(ieY + 170, screenH - 220))
 
   return {
     ...state,
