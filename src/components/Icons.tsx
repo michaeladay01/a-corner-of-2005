@@ -333,17 +333,42 @@ export function MailIcon({ size = 16 }: P) {
   )
 }
 
-/* The desktop's Hotmail shortcut. MailIcon is drawn on a 16px grid for the
-   taskbar and the contact list; blown up to icon size it reads as a thin
-   outline next to the others, so the desktop gets its own at 34. */
+/* The desktop's Hotmail shortcut: the envelope with the two arrows going
+   round it, one in and one out. The arrow is drawn once and used twice, the
+   second turned half a turn about the middle, which is the symmetry the
+   picture has. */
 export function HotmailIcon({ size = 34 }: P) {
   return (
     <svg width={size} height={size} viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2.5" y="7.5" width="29" height="19" rx="1.5" fill="#fff" stroke="#5a7aa0" />
-      <path d="M2.5 9 L17 19.5 L31.5 9" fill="none" stroke="#5a7aa0" strokeWidth="1.4" />
-      <path d="M2.5 25.5 L13 17 M31.5 25.5 L21 17" fill="none" stroke="#9fb3c8" />
-      <path d="M21 4 h10 v8 h-10Z" fill="#1769b4" stroke="#0f4e89" />
-      <path d="M23 8.2 l2 2 l4 -4.2" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <defs>
+        <linearGradient id="hm-paper" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffffff" />
+          <stop offset="1" stopColor="#d7e3f2" />
+        </linearGradient>
+        <linearGradient id="hm-blue" x1="0.1" y1="0" x2="0.5" y2="1">
+          <stop offset="0" stopColor="#d6efff" />
+          <stop offset="0.4" stopColor="#4fa9ef" />
+          <stop offset="1" stopColor="#0a5aa8" />
+        </linearGradient>
+        <linearGradient id="hm-stamp" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffd98a" />
+          <stop offset="0.5" stopColor="#ef8a3a" />
+          <stop offset="1" stopColor="#a94a8e" />
+        </linearGradient>
+      </defs>
+
+      <rect x="4" y="9.5" width="26" height="16" rx="0.8" fill="url(#hm-paper)" stroke="#7489a8" strokeWidth="0.9" />
+      <rect x="24.2" y="11" width="4.3" height="4.4" fill="url(#hm-stamp)" stroke="#9aa7bb" strokeWidth="0.5" />
+      <path d="M7.5 17.6 h11.5 M7.5 20 h11.5 M7.5 22.4 h8" stroke="#b3bfcd" strokeWidth="1.3" strokeLinecap="round" />
+
+      <g fill="url(#hm-blue)" stroke="#06467f" strokeWidth="0.55" strokeLinejoin="round">
+        <path d="M29.5 2.2 C20 -0.4 11 2.6 8.6 9.9 L13.2 11.4 C15 6.3 21.4 4.2 28 6.1 Z" />
+        <path d="M16.2 12.4 L5.2 8.8 L7.6 19.6 Z" />
+      </g>
+      <g fill="url(#hm-blue)" stroke="#06467f" strokeWidth="0.55" strokeLinejoin="round" transform="rotate(180 17 17)">
+        <path d="M29.5 2.2 C20 -0.4 11 2.6 8.6 9.9 L13.2 11.4 C15 6.3 21.4 4.2 28 6.1 Z" />
+        <path d="M16.2 12.4 L5.2 8.8 L7.6 19.6 Z" />
+      </g>
     </svg>
   )
 }
