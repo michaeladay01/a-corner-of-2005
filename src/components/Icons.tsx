@@ -333,12 +333,11 @@ export function MailIcon({ size = 16 }: P) {
   )
 }
 
-/* The desktop's Hotmail shortcut: the envelope with the two arrows going
-   round it, one in and one out. The arrow is drawn once and used twice, the
-   second turned half a turn about the middle, which is the symmetry the
-   picture has. */
+/* The desktop's Hotmail shortcut: Michaela's envelope-and-arrows artwork,
+   with the drawn one behind it for when the file is missing. */
 export function HotmailIcon({ size = 34 }: P) {
   return (
+    <LogoImg name="hotmail" size={size}>
     <svg width={size} height={size} viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="hm-paper" x1="0" y1="0" x2="0" y2="1">
@@ -370,6 +369,7 @@ export function HotmailIcon({ size = 34 }: P) {
         <path d="M16.2 12.4 L5.2 8.8 L7.6 19.6 Z" />
       </g>
     </svg>
+    </LogoImg>
   )
 }
 
